@@ -1,0 +1,248 @@
+/* Global styles */
+#root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  height: 100vh;
+  background-color: #14202a; /* Dark blue from logo */
+  color: #ffffff; /* White text for better readability */
+}
+
+@media (min-width: 768px) {
+  body {
+    margin-left: 10em;
+    margin-right: 10em;
+  }
+}
+
+/* Active tab styles */
+.tab-active {
+  border-bottom: 4px #ff9f1c solid; /* Bright orange from logo */
+  padding-bottom: 0.5em;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  padding: 0.5em;
+  font-size: 1.2em;
+  flex: 1;
+  border: none;
+  border-radius: 8px 0 0 8px;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #ff9f1c; /* Highlighted orange border */
+}
+
+button {
+  background-color: #ff9f1c; /* Bright orange */
+  border: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 0 8px 8px 0;
+  color: white;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e68a00; /* Darker orange for hover */
+}
+
+/* Recipe grid styles */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #1b2a38; /* Slightly lighter dark blue */
+  color: white;
+  padding: 1em;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  gap: 1.5em;
+  transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+.recipe-card h3 {
+  font-size: 1.5em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.view-more-button {
+  font-size: 1.5em;
+  padding: 1em;
+  font-weight: bold;
+  margin: auto;
+  background-color: #ff9f1c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-more-button:hover {
+  background-color: #e68a00;
+}
+
+/* App container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+/* Header styling */
+.header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.header img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.7; /* Slight transparency for overlay effect */
+  border-radius: 1em;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.5em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  padding: 0.5em 1.5em;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Modal styling */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  background-color: #1b2a38; /* Dark blue background */
+  color: #ffffff; /* White text */
+  padding: 2em;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  max-width: 600px;
+  width: 90%;
+  z-index: 2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff; /* Subtle border to separate header */
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Modal Content Area */
+.modal-content {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #e0e0e0; /* Softer white for text */
+}
+
+/* Links in the Modal */
+.modal-content a {
+  color: #ff9f1c; /* Bright orange for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.modal-content a:hover {
+  text-decoration: underline;
+}
+
+/* Close Button */
+.modal-close {
+  background: none;
+  border: none;
+  color: #ff9f1c;
+  font-size: 1.5em;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+}
+
+.modal-close:hover {
+  color: #e68a00; /* Darker orange on hover */
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tabs h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.tabs h1:hover {
+  color: #ff9f1c;
+}
+
+.recipe-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
